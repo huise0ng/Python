@@ -1,5 +1,5 @@
 n = int(input())
-a = input().split()
+a = input().split() # FOR 문을 돌려 문제 해석 
 
 for i in range(n) :
   a[i] = int(a[i])
