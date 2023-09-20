@@ -1,15 +1,10 @@
 n = int(input())
-a = input().split() # FOR 문을 돌려 문제 해석 
+a = list(map(int, input().split()))  # 입력 받은 값을 정수로 변환하여 리스트에 저장
 
-for i in range(n) :
-  a[i] = int(a[i])
+d = [0] * 24  # 리스트 초기화
 
-d = []
-for i in range(24) :
-  d.append(0)
+# 컴프리헨션을 사용하여 d 리스트 갱신
+[d.__setitem__(i, a.count(i)) for i in range(24)]
 
-for i in range(n) :
-  d[a[i]] += 1
-
-for i in range(1, 24) :
-  print(d[i], end=' ')
+# 결과 출력
+print(*d[1:])
