@@ -1,12 +1,12 @@
+def recursive_pop_sum(arr):
+    if len(arr) == 0:
+        return 0
+    else:
+        return arr.pop() + recursive_pop_sum(arr)
+
 a = input().split()
-sum = int(0)
-
-for i in range (5) :
+for i in range(5):
     a[i] = int(a[i])
-    
-for i in range (5) :
-    sum += a[i]
-        
-print(sum)
 
-# --> this problem is change pop
+result = recursive_pop_sum(a)
+print(result)
