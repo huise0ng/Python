@@ -4,6 +4,7 @@ from sys import stdin
 
 # 길이 n을 입력합니다.
 # 1 <= n <= 99
+
 # int형으로 변환합니다.
 n = int(stdin.readline())
 # 입력한 길이 n에 대하여 숫자 피라미드에서 처음 시작하는 숫자를 계산하고 변수에 저장합니다.
