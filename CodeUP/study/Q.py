@@ -11,8 +11,8 @@ class CircularQueue:
         return self.front == (self.rear + 1)
     
     def enqueue(self,item):
-        if not self.isFull():
-            self.rear = (self.rear + 1)
+        if not self.isFull(): 
+            self.rear = (self.rear + 1)  
             self.items[self.rear] = item
             
             
