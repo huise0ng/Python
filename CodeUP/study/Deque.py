@@ -12,14 +12,14 @@ class Queue:
             return False
 
     def isFull(self):
-        return (self.rear + 1)%self.cap == self.rear
+        return (self.rear + 1) % self.cap == self.front
 
     def enQueue(self, item):
         if self.isFull():
             print("Stack Overflow")
             exit()
         else:
-            self.rear =(self.rear+1) % self.cap
+            self.rear = (self.rear + 1) % self.cap
             self.list[self.rear] = item
 
     def deQueue(self):
@@ -27,20 +27,49 @@ class Queue:
             print("Stack Underflow")
             exit()
         else:
-            self.front =(self.front+1) % self.cap
-            self.list[self.front] = None
+            self.front = (self.front + 1) % self.cap
+            self.list[self.front]
 
+    def addRear(self, item):
+        if self.isFull():
+            print("Stack Overflow")
+            exit()
+        else:
+            self.rear = (self.rear + 1) % self.cap
+            self.list[self.rear] = item
+
+    def deleteRear(self):
+        if self.isEmpty():
+            print("Stack Underflow")
+            exit()
+        else:
+            removed_item = self.list[self.rear]
+            self.list[self.rear] 
+            self.rear = (self.rear - 1) % self.cap
+            return removed_item
+
+    def getRear(self):
+        if self.isEmpty():
+            print("Stack is empty")
+            exit()
+        else:
+            return self.list[self.rear]
 
     def printQueue(self):
         for i in range(self.cap):
-            print(self.list[i],end=" ")
+            print(self.list[i], end=" ")
 
 a = Queue(5)
-a.enQueue(15)
-a.enQueue(13)
-a.enQueue(11)
-a.enQueue(10)
-a.deQueue()
-a.deQueue()
-print()
-a.printQueue()
+a.addRear(15)
+a.addRear(13)
+a.addRear(11)
+a.addRear(10)
+
+print(a.getRear()) 
+
+a.deleteRear()  
+a.deleteRear()  
+
+print(a.getRear()) 
+
+a.printQueue()  
