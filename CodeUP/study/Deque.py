@@ -24,7 +24,6 @@ class Queue:
 
     def deQueue(self):
         if self.isEmpty():
-            print("Stack Underflow")
             exit()
         else:
             self.front = (self.front + 1) % self.cap
@@ -32,7 +31,6 @@ class Queue:
 
     def addRear(self, item):
         if self.isFull():
-            print("Stack Overflow")
             exit()
         else:
             self.rear = (self.rear + 1) % self.cap
@@ -40,7 +38,6 @@ class Queue:
 
     def deleteRear(self):
         if self.isEmpty():
-            print("Stack Underflow")
             exit()
         else:
             removed_item = self.list[self.rear]
@@ -50,7 +47,6 @@ class Queue:
 
     def getRear(self):
         if self.isEmpty():
-            print("Stack is empty")
             exit()
         else:
             return self.list[self.rear]
